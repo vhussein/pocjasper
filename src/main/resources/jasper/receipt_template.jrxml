@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="receipt_template" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba688ad3-d463-4831-a9b8-993b051520aa">
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="payment" class="com.azlan.test.pocjasper.model.Payment"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="30" width="100" height="30" uuid="0a68c0d7-cc69-453b-a858-38f03fb8c48a"/>
+				<textElement>
+					<font fontName="Arial Black" size="20"/>
+				</textElement>
+				<text><![CDATA[Receipt]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="20" width="50" height="50" uuid="374b40e4-4f0a-40c0-9f0e-b6ab594c9b51"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement key="" x="30" y="0" width="120" height="20" uuid="e2cdccff-c841-4841-94bb-a451c29c970d"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Payment Reference:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="20" width="120" height="20" uuid="ec649e70-083c-4883-b8b0-7cbd4643a44d"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="40" width="120" height="20" uuid="7569fc1b-5303-475b-99ba-8cc032300228"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[From Account:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="60" width="120" height="20" uuid="50b7a54c-3749-4c9c-b88d-1d37002addc3"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[To Account:]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="" x="150" y="0" width="290" height="20" uuid="a0307128-8ed2-49d9-96bc-2c2f66a557fd"/>
+				<textFieldExpression><![CDATA[$P{payment}.getRefNumber()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="150" y="20" width="290" height="20" uuid="e1c7e662-49f6-4dad-ae73-f2f25296bad5"/>
+				<textFieldExpression><![CDATA[$P{payment}.getDate()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="150" y="40" width="290" height="20" uuid="4097b4fc-b052-4de1-8725-d74d9c048015"/>
+				<textFieldExpression><![CDATA[$P{payment}.getFromAccount()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="150" y="60" width="290" height="20" uuid="cc375d0a-7b7f-46cc-b322-c753458ae4a9"/>
+				<textFieldExpression><![CDATA[$P{payment}.getToAccount()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
