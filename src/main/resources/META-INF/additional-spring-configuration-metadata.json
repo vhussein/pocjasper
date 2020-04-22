@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "myapp.jasperpath",
+      "type": "java.lang.String",
+      "description": "To define the source path of jasper related files."
+  }
+] }

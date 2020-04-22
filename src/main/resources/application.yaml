@@ -2,3 +2,6 @@ logging:
   level:
     org.springframework: DEBUG
     com.azlan.test: DEBUG
+
+myapp:
+  jasperpath: "/jasper/"
